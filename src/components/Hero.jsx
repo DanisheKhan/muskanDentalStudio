@@ -43,8 +43,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-[3.4rem] font-800 text-gray-900 leading-[1.15] tracking-tight mb-5"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              className="heading-serif text-4xl sm:text-6xl lg:text-[4rem] font-800 text-gray-900 leading-[1.1] tracking-tight mb-6"
             >
               Complete Dental
               <br />
@@ -119,17 +118,25 @@ export default function Hero() {
             className="hidden lg:flex flex-col items-center justify-center relative"
           >
             {/* Main tooth graphic */}
-            <div className="relative">
-              <div className="tooth-pulse w-52 h-52 rounded-[40%] bg-gradient-to-br from-white to-[#d0f0f5] shadow-2xl flex items-center justify-center border border-[#a1e2ec]/30">
-                <svg viewBox="0 0 80 90" className="w-32 h-32" xmlns="http://www.w3.org/2000/svg">
-                  {/* Tooth shape */}
+            <div className="relative group">
+              {/* Outer glow ring */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-[#0ea0b8]/20 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              <div className="tooth-pulse w-56 h-56 rounded-[2.5rem] bg-white shadow-2xl flex items-center justify-center border border-[#a1e2ec]/20 relative z-10">
+                {/* Inner glass layer */}
+                <div className="absolute inset-2 rounded-[2rem] bg-[#f0fafa]/50 border border-white/80" />
+                
+                <svg viewBox="0 0 80 90" className="w-32 h-32 relative z-20" xmlns="http://www.w3.org/2000/svg">
                   <path d="M40 5C30 5 20 10 16 18 12 26 11 36 14 44 17 52 20 58 22 68 24 76 28 82 33 82c3 0 5-2 7-8l2-8 2 8c2 6 4 8 7 8 5 0 9-6 11-14 2-10 5-16 8-24 3-8 2-18-2-26C65 10 55 5 40 5z"
-                    fill="#0ea0b8" opacity="0.15"/>
+                    fill="url(#toothGradient)"/>
+                  <defs>
+                    <linearGradient id="toothGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#0ea0b8" />
+                      <stop offset="100%" stopColor="#0c6d85" />
+                    </linearGradient>
+                  </defs>
                   <path d="M40 8C31 8 22 13 18 21 14 29 13 38 16 46 19 54 22 60 24 70 26 78 29 84 34 84c3 0 5.5-2 7-8l1-4 1 4c1.5 6 4 8 7 8 5 0 8-6 10-14 2-10 5-16 8-24 3-8 2-17-2-25C62 13 53 8 40 8z"
-                    fill="none" stroke="#0ea0b8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  {/* Shine lines */}
-                  <path d="M28 18 Q32 24 29 32" stroke="#0ea0b8" strokeWidth="2" strokeLinecap="round" opacity="0.5" fill="none"/>
-                  <path d="M35 14 Q37 20 35 26" stroke="#0ea0b8" strokeWidth="2" strokeLinecap="round" opacity="0.3" fill="none"/>
+                    fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.4"/>
                 </svg>
               </div>
 

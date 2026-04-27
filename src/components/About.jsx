@@ -85,7 +85,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={headInView ? { opacity: 1, y: 0 } : {}}
               transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
-              className="text-3xl lg:text-4xl font-800 text-gray-900 mb-5 leading-tight"
+              className="heading-serif text-3xl lg:text-5xl font-800 text-gray-900 mb-5 leading-tight"
             >
               Your Trusted Dental
               <br />

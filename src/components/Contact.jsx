@@ -43,7 +43,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 16 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
-            className="text-3xl lg:text-4xl font-800 text-gray-900 mb-4"
+            className="heading-serif text-3xl lg:text-5xl font-800 text-gray-900 mb-4"
           >
             Get In Touch With Us
           </motion.h2>

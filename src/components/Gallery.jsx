@@ -60,7 +60,7 @@ export default function Gallery() {
             initial={{ opacity: 0, y: 16 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
-            className="text-3xl lg:text-4xl font-800 text-gray-900 mb-4"
+            className="heading-serif text-3xl lg:text-5xl font-800 text-gray-900 mb-4"
           >
             Real Smiles, Real Results
           </motion.h2>
@@ -75,7 +75,7 @@ export default function Gallery() {
         </div>
 
         {/* Gallery grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-16" style={{ gridAutoRows: '160px' }}>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16" style={{ gridAutoRows: 'minmax(180px, auto)' }}>
           {items.map((item, i) => (
             <motion.div
               key={item.label}
@@ -88,11 +88,31 @@ export default function Gallery() {
                 damping: 20, 
                 delay: i * 0.04 
               }}
-              whileHover={{ scale: 1.03 }}
-              className={`${item.span} rounded-2xl bg-gradient-to-br ${item.bg} flex flex-col items-center justify-center gap-2 cursor-default border border-white/50 shadow-sm hover:shadow-md transition-shadow duration-300`}
+              whileHover={{ 
+                scale: 1.02,
+                y: -5,
+                transition: { type: 'spring', stiffness: 400, damping: 10 }
+              }}
+              className={`${item.span} group relative rounded-[2rem] overflow-hidden border border-white/80 shadow-sm hover:shadow-2xl transition-all duration-500`}
             >
-              <span className="text-4xl">{item.emoji}</span>
-              <p className="text-xs font-600 text-gray-600 text-center px-2">{item.label}</p>
+              {/* Decorative background for the card */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-40 group-hover:opacity-60 transition-opacity`} />
+              <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
+              
+              {/* Pattern overlay */}
+              <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity" 
+                style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '12px 12px' }} 
+              />
+
+              <div className="relative h-full w-full p-6 flex flex-col items-center justify-center text-center">
+                <div className="w-16 h-16 rounded-2xl bg-white/80 shadow-inner flex items-center justify-center text-4xl mb-4 group-hover:scale-110 transition-transform duration-500">
+                  {item.emoji}
+                </div>
+                <p className="text-xs font-800 text-gray-800 uppercase tracking-widest opacity-80 group-hover:opacity-100 transition-opacity">
+                  {item.label}
+                </p>
+                <div className="mt-3 w-8 h-1 bg-[#0ea0b8]/30 rounded-full group-hover:w-16 transition-all duration-500" />
+              </div>
             </motion.div>
           ))}
         </div>

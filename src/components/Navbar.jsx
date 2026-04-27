@@ -27,7 +27,7 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
           : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
@@ -39,9 +39,9 @@ export default function Navbar() {
               <path d="M12 2C9.8 2 8 3.1 7 4.8 6.2 4.3 5.3 4 4.3 4 2 4 0 6 0 8.5c0 4 3 7 6 8l0.8 5.5c0.2 1.1 1.1 2 2.2 2s2-.9 2.2-2L12 17l0.8 5.5c0.2 1.1 1.1 2 2.2 2s2-.9 2.2-2L18 14c3-1 6-4 6-8C24 6 22 4 19.7 4c-1 0-1.9 0.3-2.7 0.8C16 3.1 14.2 2 12 2z"/>
             </svg>
           </div>
-          <div>
-            <p className="text-sm font-700 text-gray-900 leading-tight tracking-tight">Muskan Dental</p>
-            <p className="text-[10px] text-[#0ea0b8] font-500 leading-tight tracking-widest uppercase">Studio</p>
+          <div className="heading-serif">
+            <p className="text-sm font-800 text-gray-900 leading-tight tracking-tight">Muskan Dental</p>
+            <p className="font-sans text-[10px] text-[#0ea0b8] font-600 leading-tight tracking-[0.2em] uppercase">Studio</p>
           </div>
         </a>
 
