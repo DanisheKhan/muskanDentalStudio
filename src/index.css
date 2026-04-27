@@ -1,1 +1,139 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f0fafa;
+  --color-brand-100: #d0f0f5;
+  --color-brand-200: #a1e2ec;
+  --color-brand-300: #5fccdc;
+  --color-brand-400: #29b6cc;
+  --color-brand-500: #0ea0b8;
+  --color-brand-600: #0c819a;
+  --color-brand-700: #0e677c;
+  --color-brand-800: #125466;
+  --color-brand-900: #134556;
+  --color-brand-950: #092d3a;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #1a1a2e;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #0ea0b8;
+  border-radius: 3px;
+}
+
+/* Smooth section transitions */
+section {
+  position: relative;
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Tooth icon pulse */
+@keyframes tooth-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.tooth-pulse {
+  animation: tooth-pulse 3s ease-in-out infinite;
+}
+
+/* Floating badge */
+@keyframes float-up {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.float-badge {
+  animation: float-up 4s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0ea0b8, #0c819a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section divider wave */
+.wave-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Shine on hover */
+.shine-card {
+  position: relative;
+  overflow: hidden;
+}
+.shine-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  z-index: 1;
+}
+.shine-card:hover::before {
+  left: 130%;
+}
+
+/* Active nav underline */
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #0ea0b8;
+  border-radius: 2px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
