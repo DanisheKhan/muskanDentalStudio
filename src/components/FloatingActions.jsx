@@ -19,7 +19,7 @@ export default function FloatingActions() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.2, type: 'spring', stiffness: 300 }}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] text-white text-sm font-600 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] text-white text-sm font-600 shadow-xl hover:shadow-2xl transition-all duration-200"
         aria-label="Call us"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

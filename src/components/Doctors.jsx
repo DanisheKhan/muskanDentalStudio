@@ -45,7 +45,6 @@ function DoctorCard({ doctor, index }) {
         damping: 20, 
         delay: index * 0.1 
       }}
-      whileHover={{ y: -8 }}
       id={doctor.id}
       className="group relative rounded-[2.5rem] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-[#a1e2ec]/30 transition-all duration-500 overflow-hidden"
     >
@@ -113,7 +112,6 @@ function DoctorCard({ doctor, index }) {
           </div>
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="w-full sm:w-auto text-center text-xs font-700 px-6 py-2.5 rounded-full text-white shadow-lg transition-all duration-300"
             style={{ backgroundColor: doctor.accent }}

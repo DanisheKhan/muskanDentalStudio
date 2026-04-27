@@ -34,7 +34,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0ea0b8] to-[#0c6d85] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-200">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0ea0b8] to-[#0c6d85] flex items-center justify-center shadow-md transition-transform duration-200">
             <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C9.8 2 8 3.1 7 4.8 6.2 4.3 5.3 4 4.3 4 2 4 0 6 0 8.5c0 4 3 7 6 8l0.8 5.5c0.2 1.1 1.1 2 2.2 2s2-.9 2.2-2L12 17l0.8 5.5c0.2 1.1 1.1 2 2.2 2s2-.9 2.2-2L18 14c3-1 6-4 6-8C24 6 22 4 19.7 4c-1 0-1.9 0.3-2.7 0.8C16 3.1 14.2 2 12 2z"/>
             </svg>
@@ -64,7 +64,7 @@ export default function Navbar() {
           <a
             href="#contact"
             id="navbar-cta-btn"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] text-white text-sm font-600 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] text-white text-sm font-600 shadow-md hover:shadow-lg transition-all duration-200"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

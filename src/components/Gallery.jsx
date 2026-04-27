@@ -88,11 +88,6 @@ export default function Gallery() {
                 damping: 20, 
                 delay: i * 0.04 
               }}
-              whileHover={{ 
-                scale: 1.02,
-                y: -5,
-                transition: { type: 'spring', stiffness: 400, damping: 10 }
-              }}
               className={`${item.span} group relative rounded-[2rem] overflow-hidden border border-white/80 shadow-sm hover:shadow-2xl transition-all duration-500`}
             >
               {/* Decorative background for the card */}
@@ -134,7 +129,6 @@ export default function Gallery() {
                   damping: 20, 
                   delay: i * 0.08 
                 }}
-                whileHover={{ y: -5 }}
                 className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:border-[#a1e2ec]/30 transition-all duration-300"
               >
                 {/* Stars */}

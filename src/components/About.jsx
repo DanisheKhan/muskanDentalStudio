@@ -130,7 +130,7 @@ export default function About() {
               <a
                 href="#contact"
                 id="about-book-btn"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] text-white text-sm font-600 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] text-white text-sm font-600 shadow-md hover:shadow-lg transition-all duration-200"
               >
                 Book Appointment
               </a>
@@ -162,7 +162,6 @@ export default function About() {
                     damping: 20, 
                     delay: i * 0.05 
                   }}
-                  whileHover={{ y: -5 }}
                   className="group p-5 rounded-2xl bg-[#fafcfe] border border-gray-100 hover:border-[#a1e2ec]/40 hover:bg-white hover:shadow-lg transition-all duration-300"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#e8f8fb] text-[#0ea0b8] flex items-center justify-center mb-3 group-hover:bg-[#0ea0b8] group-hover:text-white transition-all duration-300">

@@ -89,7 +89,6 @@ function ServiceCard({ service, index }) {
         damping: 20, 
         delay: index * 0.05 
       }}
-      whileHover={{ y: -8 }}
       id={service.id}
       className="group relative rounded-3xl p-7 bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-[#a1e2ec]/20 transition-all duration-500 overflow-hidden"
     >
