@@ -69,7 +69,6 @@ export default function Hero() {
             >
               <a
                 href="#contact"
-                id="hero-book-btn"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] text-white font-600 text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 whitespace-nowrap"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -79,7 +78,6 @@ export default function Hero() {
               </a>
               <a
                 href="#services"
-                id="hero-services-btn"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-700 font-600 text-sm hover:border-[#0ea0b8] hover:text-[#0ea0b8] transition-all duration-200 whitespace-nowrap"
               >
                 Our Services
@@ -92,7 +90,6 @@ export default function Hero() {
             {/* Contact quick */}
             <motion.a
               href="tel:8623015615"
-              id="hero-call-link"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -117,74 +114,91 @@ export default function Hero() {
             transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.15 }}
             className="hidden lg:flex flex-col items-center justify-center relative"
           >
-            {/* Main tooth graphic */}
-            <div className="relative group">
-              {/* Outer glow ring */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-[#0ea0b8]/20 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              
-              <div className="tooth-pulse w-56 h-56 rounded-[2.5rem] bg-white shadow-2xl flex items-center justify-center border border-[#a1e2ec]/20 relative z-10">
-                {/* Inner glass layer */}
-                <div className="absolute inset-2 rounded-[2rem] bg-[#f0fafa]/50 border border-white/80" />
-                
-                <svg viewBox="0 0 80 90" className="w-32 h-32 relative z-20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M40 5C30 5 20 10 16 18 12 26 11 36 14 44 17 52 20 58 22 68 24 76 28 82 33 82c3 0 5-2 7-8l2-8 2 8c2 6 4 8 7 8 5 0 9-6 11-14 2-10 5-16 8-24 3-8 2-18-2-26C65 10 55 5 40 5z"
-                    fill="url(#toothGradient)"/>
-                  <defs>
-                    <linearGradient id="toothGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#0ea0b8" />
-                      <stop offset="100%" stopColor="#0c6d85" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M40 8C31 8 22 13 18 21 14 29 13 38 16 46 19 54 22 60 24 70 26 78 29 84 34 84c3 0 5.5-2 7-8l1-4 1 4c1.5 6 4 8 7 8 5 0 8-6 10-14 2-10 5-16 8-24 3-8 2-17-2-25C62 13 53 8 40 8z"
-                    fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.4"/>
-                </svg>
-              </div>
+            {/* Elegant Graphic Panel */}
+            <div className="relative">
+              {/* Circular glass background */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full bg-gradient-to-br from-[#0ea0b8]/10 to-transparent border border-[#0ea0b8]/10 animate-pulse-slow" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full bg-white/40 backdrop-blur-3xl border border-white/60 shadow-2xl" />
 
-              {/* Floating badges */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-4 -right-8 bg-white rounded-2xl shadow-lg px-4 py-2.5 border border-gray-100"
-              >
-                <p className="text-xs text-gray-400 font-500">Patients</p>
-                <p className="text-lg font-800 text-[#0ea0b8]">5000+</p>
-              </motion.div>
+              <div className="relative z-10 w-64 h-64 flex items-center justify-center">
+                {/* Floating Tooth */}
+                <motion.div
+                  animate={{ 
+                    y: [0, -12, 0],
+                    rotate: [0, 2, 0]
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: 'easeInOut' 
+                  }}
+                  className="relative z-20"
+                >
+                  <svg viewBox="0 0 80 90" className="w-40 h-40 drop-shadow-2xl" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 5C30 5 20 10 16 18 12 26 11 36 14 44 17 52 20 58 22 68 24 76 28 82 33 82c3 0 5-2 7-8l2-8 2 8c2 6 4 8 7 8 5 0 9-6 11-14 2-10 5-16 8-24 3-8 2-18-2-26C65 10 55 5 40 5z"
+                      fill="url(#heroToothGrad)"/>
+                    <defs>
+                      <linearGradient id="heroToothGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#0ea0b8" />
+                        <stop offset="100%" stopColor="#0c6d85" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M40 8C31 8 22 13 18 21 14 29 13 38 16 46 19 54 22 60 24 70 26 78 29 84 34 84c3 0 5.5-2 7-8l1-4 1 4c1.5 6 4 8 7 8 5 0 8-6 10-14 2-10 5-16 8-24 3-8 2-17-2-25C62 13 53 8 40 8z"
+                      fill="none" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" opacity="0.3"/>
+                  </svg>
+                </motion.div>
 
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                className="absolute -bottom-4 -left-10 bg-white rounded-2xl shadow-lg px-4 py-2.5 border border-gray-100"
-              >
-                <p className="text-xs text-gray-400 font-500">Experience</p>
-                <p className="text-lg font-800 text-[#0ea0b8]">10+ Yrs</p>
-              </motion.div>
+                {/* Floating elements around the tooth */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute top-0 -right-4 z-30 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl px-4 py-3 border border-white"
+                >
+                  <p className="text-[10px] text-gray-400 font-700 uppercase tracking-wider mb-0.5">Patients</p>
+                  <p className="text-xl font-900 text-[#0ea0b8]">5000+</p>
+                </motion.div>
 
-              <motion.div
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute top-16 -right-14 bg-[#0ea0b8] rounded-2xl shadow-lg px-3.5 py-2 text-white"
-              >
-                <div className="flex items-center gap-1.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                  className="absolute -bottom-2 -left-6 z-30 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl px-4 py-3 border border-white"
+                >
+                  <p className="text-[10px] text-gray-400 font-700 uppercase tracking-wider mb-0.5">Experience</p>
+                  <p className="text-xl font-900 text-[#0ea0b8]">10+ Yrs</p>
+                </motion.div>
+
+                {/* Rating star */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: 'spring', delay: 0.8 }}
+                  className="absolute top-1/2 -right-12 z-30 w-12 h-12 bg-amber-400 rounded-full shadow-lg flex items-center justify-center border-4 border-white"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
-                  <span className="text-xs font-700">4.9 Rating</span>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
 
-            {/* Stats row */}
-            <div className="mt-12 grid grid-cols-2 gap-4 w-full max-w-xs">
+            {/* Reimagined Stats Grid */}
+            <div className="mt-16 grid grid-cols-2 gap-5 w-full max-w-sm">
               {stats.map((s, i) => (
                 <motion.div
                   key={s.label}
-                  initial={{ opacity: 0, y: 16 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.4 + i * 0.08 }}
-                  className="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 hover:border-[#a1e2ec] transition-colors duration-200"
+                  transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.5 + i * 0.1 }}
+                  className="group relative p-5 rounded-3xl bg-white/50 backdrop-blur-sm border border-white hover:border-[#a1e2ec] hover:bg-white transition-all duration-300 shadow-sm hover:shadow-xl"
                 >
-                  <p className="text-2xl font-800 text-[#0ea0b8]">{s.value}</p>
-                  <p className="text-xs text-gray-500 font-500 mt-0.5">{s.label}</p>
+                  <div className="flex flex-col items-center">
+                    <p className="text-3xl font-900 text-gray-900 mb-1 group-hover:text-[#0ea0b8] transition-colors">
+                      {s.value}
+                    </p>
+                    <p className="text-[10px] font-800 text-gray-400 uppercase tracking-widest text-center">
+                      {s.label}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>

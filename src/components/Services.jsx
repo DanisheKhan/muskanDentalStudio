@@ -89,29 +89,45 @@ function ServiceCard({ service, index }) {
         damping: 20, 
         delay: index * 0.05 
       }}
-      whileHover={{ y: -5, scale: 1.02 }}
+      whileHover={{ y: -8 }}
       id={service.id}
-      className="shine-card group rounded-2xl p-5 bg-white border border-gray-100 hover:border-[#a1e2ec]/30 shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-default"
+      className="group relative rounded-3xl p-7 bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-[#a1e2ec]/20 transition-all duration-500 overflow-hidden"
     >
-      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-500`}>
-        {service.icon}
+      {/* Decorative card background */}
+      <div className={`absolute -right-8 -top-8 w-32 h-32 rounded-full bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-700`} />
+      
+      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
+        <span className="drop-shadow-sm">{service.icon}</span>
       </div>
-      <h3 className="text-sm font-700 text-gray-900 mb-2">{service.title}</h3>
-      <p className="text-xs text-gray-500 leading-relaxed">{service.desc}</p>
-      <div className="mt-3 flex items-center gap-1 text-xs font-600" style={{ color: service.accent }}>
-        <span>Learn more</span>
-        <motion.svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="w-3.5 h-3.5" 
-          fill="none" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor" 
-          strokeWidth={2}
-          whileHover={{ x: 2 }}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </motion.svg>
+      
+      <h3 className="text-base font-800 text-gray-900 mb-3 group-hover:text-[#0ea0b8] transition-colors duration-300">
+        {service.title}
+      </h3>
+      
+      <p className="text-sm text-gray-500 leading-relaxed mb-6 group-hover:text-gray-600 transition-colors">
+        {service.desc}
+      </p>
+      
+      <div className="flex items-center gap-2 text-xs font-700 uppercase tracking-wider" style={{ color: service.accent }}>
+        <span>Explore Details</span>
+        <div className="relative w-5 h-5 flex items-center justify-center">
+          <motion.svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="w-4 h-4" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor" 
+            strokeWidth={2.5}
+            animate={{ x: [0, 4, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </motion.svg>
+        </div>
       </div>
+
+      {/* Hover progress bar at bottom */}
+      <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-[#0ea0b8] to-transparent w-0 group-hover:w-full transition-all duration-700 opacity-30" />
     </motion.div>
   );
 }

@@ -45,76 +45,80 @@ function DoctorCard({ doctor, index }) {
         damping: 20, 
         delay: index * 0.1 
       }}
-      whileHover={{ y: -8, scale: 1.01 }}
+      whileHover={{ y: -8 }}
       id={doctor.id}
-      className="group relative rounded-3xl bg-white border border-gray-100 hover:border-[#a1e2ec]/20 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden"
+      className="group relative rounded-[2.5rem] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-[#a1e2ec]/30 transition-all duration-500 overflow-hidden"
     >
-      {/* Top accent bar */}
-      <div
-        className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl transition-all duration-300"
-        style={{ background: `linear-gradient(90deg, ${doctor.accent}, ${doctor.accent}88)` }}
-      />
-
-      <div className="p-7">
-        {/* Avatar */}
-        <div className="flex items-start gap-5 mb-5">
-          <div
-            className={`w-18 h-18 rounded-2xl bg-gradient-to-br ${doctor.bg} flex items-center justify-center flex-shrink-0 text-2xl font-800 group-hover:scale-110 transition-transform duration-500`}
-            style={{ color: doctor.accent, width: '72px', height: '72px' }}
-          >
-            {doctor.initials}
+      {/* Decorative accent background */}
+      <div className={`absolute -right-16 -top-16 w-48 h-48 rounded-full bg-gradient-to-br ${doctor.bg} opacity-0 group-hover:opacity-30 blur-3xl transition-opacity duration-700`} />
+      
+      <div className="p-8 lg:p-10">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8 text-center sm:text-left">
+          {/* Avatar / Initials */}
+          <div className="relative">
+            <div className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${doctor.bg} flex items-center justify-center text-3xl font-900 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-inner`} style={{ color: doctor.accent }}>
+              {doctor.initials}
+            </div>
+            {/* Online status indicator */}
+            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+            </div>
           </div>
-          <div className="flex-1 pt-1">
-            <h3 className="text-base font-700 text-gray-900 mb-0.5">{doctor.name}</h3>
-            <p className="text-xs text-gray-400 font-500 mb-2">{doctor.degree}</p>
-            <span
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-600 text-white"
-              style={{ backgroundColor: doctor.badgeColor }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              {doctor.badge}
-            </span>
+
+          <div className="flex-1">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2 justify-center sm:justify-start">
+              <h3 className="heading-serif text-xl font-800 text-gray-900">{doctor.name}</h3>
+              <span
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-700 text-white shadow-sm"
+                style={{ backgroundColor: doctor.badgeColor }}
+              >
+                {doctor.badge}
+              </span>
+            </div>
+            <p className="text-sm font-700 text-[#0ea0b8] tracking-wide mb-3">{doctor.degree}</p>
+            <p className="text-xs font-600 text-gray-400 uppercase tracking-[0.2em]">{doctor.specialty}</p>
           </div>
         </div>
 
-        {/* Specialty */}
-        <p className="text-xs font-600 text-gray-400 uppercase tracking-widest mb-2">{doctor.specialty}</p>
+        <p className="text-sm text-gray-500 leading-relaxed mb-8">
+          {doctor.desc}
+        </p>
 
-        {/* Description */}
-        <p className="text-sm text-gray-600 leading-relaxed mb-5">{doctor.desc}</p>
-
-        {/* Skills */}
-        <div className="flex flex-wrap gap-2 mb-5">
+        {/* Skills grid */}
+        <div className="flex flex-wrap gap-2 mb-8 justify-center sm:justify-start">
           {doctor.skills.map((skill) => (
             <span
               key={skill}
-              className="text-[11px] px-2.5 py-1 rounded-full font-500 border"
-              style={{ color: doctor.accent, borderColor: `${doctor.accent}30`, backgroundColor: `${doctor.accent}08` }}
+              className="text-[11px] px-3 py-1.5 rounded-xl font-600 border transition-colors duration-300"
+              style={{ 
+                color: doctor.accent, 
+                borderColor: `${doctor.accent}20`, 
+                backgroundColor: `${doctor.accent}05` 
+              }}
             >
               {skill}
             </span>
           ))}
         </div>
 
-        {/* Hours + CTA */}
-        <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-          <div className="flex items-center gap-2 text-xs text-gray-400">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+        {/* Footer info */}
+        <div className="pt-6 border-t border-gray-50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 text-xs font-600 text-gray-400">
+            <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-[#0ea0b8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
             <span>{doctor.hours}</span>
           </div>
           <motion.a
             href="#contact"
-            id={`${doctor.id}-book-btn`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="text-xs font-600 px-4 py-1.5 rounded-full text-white shadow-md"
+            className="w-full sm:w-auto text-center text-xs font-700 px-6 py-2.5 rounded-full text-white shadow-lg transition-all duration-300"
             style={{ backgroundColor: doctor.accent }}
           >
-            Book Now
+            Schedule Consult
           </motion.a>
         </div>
       </div>
