@@ -42,7 +42,7 @@ export default function Gallery() {
   const headInView = useInView(headRef, { once: true, margin: '-60px' });
 
   return (
-    <section id="gallery" className="py-20 lg:py-28 bg-[#fafcfe]">
+    <section id="gallery" className="py-16 lg:py-28 bg-[#fafcfe]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div ref={headRef} className="text-center mb-12">
@@ -75,7 +75,7 @@ export default function Gallery() {
         </div>
 
         {/* Gallery grid */}
-        <div className="grid grid-cols-3 gap-3 mb-16" style={{ gridAutoRows: '160px' }}>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-16" style={{ gridAutoRows: '160px' }}>
           {items.map((item, i) => (
             <motion.div
               key={item.label}

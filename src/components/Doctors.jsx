@@ -127,7 +127,7 @@ export default function Doctors() {
   const headInView = useInView(headRef, { once: true, margin: '-60px' });
 
   return (
-    <section id="doctors" className="py-20 lg:py-28 bg-white">
+    <section id="doctors" className="py-16 lg:py-28 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div ref={headRef} className="text-center mb-12">

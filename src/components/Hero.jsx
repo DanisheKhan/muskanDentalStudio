@@ -9,7 +9,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-white">
+    <section id="home" className="relative min-h-screen flex items-center pt-20 lg:pt-24 overflow-hidden bg-white">
       {/* Background mesh */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -43,7 +43,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-[3.4rem] font-800 text-gray-900 leading-[1.15] tracking-tight mb-5"
+              className="text-3xl sm:text-5xl lg:text-[3.4rem] font-800 text-gray-900 leading-[1.15] tracking-tight mb-5"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
               Complete Dental
@@ -71,7 +71,7 @@ export default function Hero() {
               <a
                 href="#contact"
                 id="hero-book-btn"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] text-white font-600 text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] text-white font-600 text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 whitespace-nowrap"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -81,7 +81,7 @@ export default function Hero() {
               <a
                 href="#services"
                 id="hero-services-btn"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-700 font-600 text-sm hover:border-[#0ea0b8] hover:text-[#0ea0b8] transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-700 font-600 text-sm hover:border-[#0ea0b8] hover:text-[#0ea0b8] transition-all duration-200 whitespace-nowrap"
               >
                 Our Services
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

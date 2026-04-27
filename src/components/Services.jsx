@@ -121,7 +121,7 @@ export default function Services() {
   const headInView = useInView(headRef, { once: true, margin: '-60px' });
 
   return (
-    <section id="services" className="py-20 lg:py-28 bg-[#fafcfe]">
+    <section id="services" className="py-16 lg:py-28 bg-[#fafcfe]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div ref={headRef} className="text-center mb-12">
@@ -167,7 +167,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.5 }}
-          className="mt-10 rounded-2xl bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] p-6 flex flex-wrap gap-6 items-center justify-between"
+          className="mt-10 rounded-2xl bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] p-6 lg:p-8 flex flex-col sm:flex-row gap-6 items-center sm:justify-between text-center sm:text-left"
         >
           <div>
             <h3 className="text-white font-700 text-base mb-1">Advanced Technology</h3>

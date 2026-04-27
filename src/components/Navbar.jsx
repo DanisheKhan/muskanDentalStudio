@@ -27,11 +27,11 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
+          ? 'bg-white/95 backdrop-blur-md'
           : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-18">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2.5 group">
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0ea0b8] to-[#0c6d85] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-200">
@@ -96,7 +96,7 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-white/97 border-t border-gray-100 overflow-hidden"
+            className="md:hidden bg-white/97 overflow-hidden"
           >
             <ul className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
