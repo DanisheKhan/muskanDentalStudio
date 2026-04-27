@@ -40,9 +40,10 @@ export default function Contact() {
         {/* Header */}
         <div ref={headRef} className="text-center mb-14">
           <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f8fb] text-[#0ea0b8] text-xs font-600 mb-4 border border-[#a1e2ec]/40"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -51,17 +52,19 @@ export default function Contact() {
             Book An Appointment
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="heading-serif text-3xl lg:text-5xl font-800 text-gray-900 mb-4"
           >
             Get In Touch With Us
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
             className="text-gray-500 max-w-md mx-auto text-sm lg:text-base"
           >
             Schedule your visit today or call us directly. We are always happy to help with your dental needs.
@@ -71,10 +74,10 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-10">
           {/* Form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ type: 'spring', stiffness: 80, damping: 20 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="rounded-3xl bg-[#fafcfe] border border-gray-100 p-7 lg:p-9"
           >
             <h3 className="text-lg font-700 text-gray-900 mb-6">Book Appointment</h3>
@@ -169,10 +172,10 @@ export default function Contact() {
 
           {/* Info */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="flex flex-col gap-6"
           >
             {/* Address */}
@@ -257,10 +260,10 @@ export default function Contact() {
 
         {/* Map embed */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ type: 'spring', stiffness: 70, damping: 20, delay: 0.2 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="mt-10 rounded-2xl overflow-hidden border border-gray-100 h-64"
         >
           <iframe

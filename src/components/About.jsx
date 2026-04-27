@@ -70,9 +70,10 @@ export default function About() {
           {/* Left */}
           <div ref={headRef}>
             <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f8fb] text-[#0ea0b8] text-xs font-600 mb-5 border border-[#a1e2ec]/40"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -83,8 +84,9 @@ export default function About() {
 
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
-              animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
               className="heading-serif text-3xl lg:text-5xl font-800 text-gray-900 mb-5 leading-tight"
             >
               Muskan Dental
@@ -93,9 +95,10 @@ export default function About() {
             </motion.h2>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.2 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
               className="space-y-4 text-sm text-gray-500 leading-relaxed mb-7"
             >
               <p>
@@ -107,9 +110,10 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
               className="flex flex-wrap gap-3"
             >
               <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -122,9 +126,10 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.4 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
               className="mt-6 flex flex-wrap gap-3"
             >
               <a
@@ -155,12 +160,10 @@ export default function About() {
                   key={item.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-20px' }}
+                  viewport={{ once: true }}
                   transition={{ 
-                    type: 'spring', 
-                    stiffness: 90, 
-                    damping: 20, 
-                    delay: i * 0.05 
+                    duration: 0.5, 
+                    ease: 'easeOut'
                   }}
                   className="group p-5 rounded-2xl bg-[#fafcfe] border border-gray-100 hover:border-[#a1e2ec]/40 hover:bg-white hover:shadow-lg transition-all duration-300"
                 >

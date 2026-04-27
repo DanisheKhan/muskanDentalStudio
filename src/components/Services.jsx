@@ -82,12 +82,10 @@ function ServiceCard({ service, index }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-20px' }}
+      viewport={{ once: true }}
       transition={{ 
-        type: 'spring', 
-        stiffness: 100, 
-        damping: 20, 
-        delay: index * 0.05 
+        duration: 0.5, 
+        ease: 'easeOut'
       }}
       id={service.id}
       className="group relative rounded-3xl p-7 bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-[#a1e2ec]/20 transition-all duration-500 overflow-hidden"
@@ -141,9 +139,10 @@ export default function Services() {
         {/* Header */}
         <div ref={headRef} className="text-center mb-12">
           <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f8fb] text-[#0ea0b8] text-xs font-600 mb-4 border border-[#a1e2ec]/40"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -152,17 +151,19 @@ export default function Services() {
             Our Dental Services
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.08 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="heading-serif text-3xl lg:text-5xl font-800 text-gray-900 mb-4"
           >
             Everything Your Smile Needs
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.15 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
             className="text-gray-500 max-w-lg mx-auto text-sm lg:text-base"
           >
             From routine check-ups to complex procedures — our specialists provide comprehensive dental care using advanced technology and gentle techniques.
@@ -180,8 +181,8 @@ export default function Services() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="mt-10 rounded-2xl bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] p-6 lg:p-8 flex flex-col sm:flex-row gap-6 items-center sm:justify-between text-center sm:text-left"
         >
           <div>
