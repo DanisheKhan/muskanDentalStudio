@@ -17,7 +17,18 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In production, integrate with a backend or form service
+    
+    const text = `*New Appointment Request - Muskan Dental Studio*\n\n` +
+      `*Name:* ${form.name}\n` +
+      `*Phone:* ${form.phone}\n` +
+      `*Service:* ${form.service || 'General Consultation'}\n` +
+      `*Message:* ${form.message || 'I would like to book an appointment.'}`;
+    
+    const whatsappUrl = `https://wa.me/917030162446?text=${encodeURIComponent(text)}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
     setForm({ name: '', phone: '', service: '', message: '' });

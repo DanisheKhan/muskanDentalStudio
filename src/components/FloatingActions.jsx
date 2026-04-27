@@ -12,7 +12,7 @@ export default function FloatingActions() {
 
   return (
     <>
-      {/* WhatsApp / Call CTA */}
+      {/* Call CTA */}
       <motion.a
         href="tel:8623015615"
         id="floating-call-btn"
