@@ -78,28 +78,39 @@ const services = [
 ];
 
 function ServiceCard({ service, index }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-60px' });
-
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.45, delay: index * 0.07, ease: 'easeOut' }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-20px' }}
+      transition={{ 
+        type: 'spring', 
+        duration: 0.8, 
+        bounce: 0.3, 
+        delay: index * 0.05 
+      }}
+      whileHover={{ y: -5, scale: 1.02 }}
       id={service.id}
-      className="shine-card group rounded-2xl p-5 bg-white border border-gray-100 hover:border-transparent hover:shadow-lg transition-all duration-300 cursor-default"
+      className="shine-card group rounded-2xl p-5 bg-white border border-gray-100 hover:border-[#a1e2ec]/30 shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-default"
     >
-      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-500`}>
         {service.icon}
       </div>
       <h3 className="text-sm font-700 text-gray-900 mb-2">{service.title}</h3>
       <p className="text-xs text-gray-500 leading-relaxed">{service.desc}</p>
       <div className="mt-3 flex items-center gap-1 text-xs font-600" style={{ color: service.accent }}>
         <span>Learn more</span>
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <motion.svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="w-3.5 h-3.5" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor" 
+          strokeWidth={2}
+          whileHover={{ x: 2 }}
+        >
           <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
+        </motion.svg>
       </div>
     </motion.div>
   );

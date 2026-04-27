@@ -152,13 +152,19 @@ export default function About() {
               {whys.map((item, i) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.4, delay: i * 0.07 }}
-                  className="group p-5 rounded-2xl bg-[#fafcfe] border border-gray-100 hover:border-[#a1e2ec] hover:bg-[#f0fafa] transition-all duration-250"
+                  viewport={{ once: true, margin: '-20px' }}
+                  transition={{ 
+                    type: 'spring', 
+                    duration: 0.8, 
+                    bounce: 0.2, 
+                    delay: i * 0.06 
+                  }}
+                  whileHover={{ y: -5 }}
+                  className="group p-5 rounded-2xl bg-[#fafcfe] border border-gray-100 hover:border-[#a1e2ec]/40 hover:bg-white hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#e8f8fb] text-[#0ea0b8] flex items-center justify-center mb-3 group-hover:bg-[#0ea0b8] group-hover:text-white transition-all duration-250">
+                  <div className="w-10 h-10 rounded-xl bg-[#e8f8fb] text-[#0ea0b8] flex items-center justify-center mb-3 group-hover:bg-[#0ea0b8] group-hover:text-white transition-all duration-300">
                     {item.icon}
                   </div>
                   <h3 className="text-sm font-700 text-gray-900 mb-1.5">{item.title}</h3>

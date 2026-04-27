@@ -34,17 +34,20 @@ const doctors = [
 ];
 
 function DoctorCard({ doctor, index }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-50px' });
-
   return (
     <motion.div
-      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ 
+        type: 'spring', 
+        duration: 1.2, 
+        bounce: 0.35, 
+        delay: index * 0.12 
+      }}
+      whileHover={{ y: -8, scale: 1.01 }}
       id={doctor.id}
-      initial={{ opacity: 0, y: 40 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.55, delay: index * 0.15, ease: 'easeOut' }}
-      className="group relative rounded-3xl bg-white border border-gray-100 hover:border-transparent hover:shadow-xl transition-all duration-400 overflow-hidden"
+      className="group relative rounded-3xl bg-white border border-gray-100 hover:border-[#a1e2ec]/20 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden"
     >
       {/* Top accent bar */}
       <div
@@ -56,7 +59,7 @@ function DoctorCard({ doctor, index }) {
         {/* Avatar */}
         <div className="flex items-start gap-5 mb-5">
           <div
-            className={`w-18 h-18 rounded-2xl bg-gradient-to-br ${doctor.bg} flex items-center justify-center flex-shrink-0 text-2xl font-800 group-hover:scale-105 transition-transform duration-300`}
+            className={`w-18 h-18 rounded-2xl bg-gradient-to-br ${doctor.bg} flex items-center justify-center flex-shrink-0 text-2xl font-800 group-hover:scale-110 transition-transform duration-500`}
             style={{ color: doctor.accent, width: '72px', height: '72px' }}
           >
             {doctor.initials}
@@ -103,14 +106,16 @@ function DoctorCard({ doctor, index }) {
             </svg>
             <span>{doctor.hours}</span>
           </div>
-          <a
+          <motion.a
             href="#contact"
             id={`${doctor.id}-book-btn`}
-            className="text-xs font-600 px-4 py-1.5 rounded-full text-white transition-all duration-200 hover:opacity-90 hover:scale-105"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="text-xs font-600 px-4 py-1.5 rounded-full text-white shadow-md"
             style={{ backgroundColor: doctor.accent }}
           >
-            Book
-          </a>
+            Book Now
+          </motion.a>
         </div>
       </div>
     </motion.div>

@@ -79,11 +79,17 @@ export default function Gallery() {
           {items.map((item, i) => (
             <motion.div
               key={item.label}
-              initial={{ opacity: 0, scale: 0.94 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
-              className={`${item.span} rounded-2xl bg-gradient-to-br ${item.bg} flex flex-col items-center justify-center gap-2 cursor-default hover:scale-[1.02] transition-transform duration-200 border border-white/50`}
+              viewport={{ once: true, margin: '-20px' }}
+              transition={{ 
+                type: 'spring', 
+                duration: 0.7, 
+                bounce: 0.3, 
+                delay: i * 0.05 
+              }}
+              whileHover={{ scale: 1.03 }}
+              className={`${item.span} rounded-2xl bg-gradient-to-br ${item.bg} flex flex-col items-center justify-center gap-2 cursor-default border border-white/50 shadow-sm hover:shadow-md transition-shadow duration-300`}
             >
               <span className="text-4xl">{item.emoji}</span>
               <p className="text-xs font-600 text-gray-600 text-center px-2">{item.label}</p>
@@ -99,11 +105,17 @@ export default function Gallery() {
               <motion.div
                 key={t.id}
                 id={t.id}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md hover:border-[#a1e2ec] transition-all duration-300"
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ 
+                  type: 'spring', 
+                  duration: 0.9, 
+                  bounce: 0.25, 
+                  delay: i * 0.08 
+                }}
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:border-[#a1e2ec]/30 transition-all duration-300"
               >
                 {/* Stars */}
                 <div className="flex gap-0.5 mb-3">
