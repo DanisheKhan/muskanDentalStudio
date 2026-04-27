@@ -59,7 +59,7 @@ export default function Gallery() {
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.08 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
             className="text-3xl lg:text-4xl font-800 text-gray-900 mb-4"
           >
             Real Smiles, Real Results
@@ -67,7 +67,7 @@ export default function Gallery() {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.15 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.2 }}
             className="text-gray-500 max-w-md mx-auto text-sm lg:text-base"
           >
             Hundreds of successful treatments and thousands of happy smiles — here's a glimpse of our work.
@@ -84,9 +84,9 @@ export default function Gallery() {
               viewport={{ once: true, margin: '-20px' }}
               transition={{ 
                 type: 'spring', 
-                duration: 0.7, 
-                bounce: 0.3, 
-                delay: i * 0.05 
+                stiffness: 100, 
+                damping: 20, 
+                delay: i * 0.04 
               }}
               whileHover={{ scale: 1.03 }}
               className={`${item.span} rounded-2xl bg-gradient-to-br ${item.bg} flex flex-col items-center justify-center gap-2 cursor-default border border-white/50 shadow-sm hover:shadow-md transition-shadow duration-300`}
@@ -110,8 +110,8 @@ export default function Gallery() {
                 viewport={{ once: true, margin: '-20px' }}
                 transition={{ 
                   type: 'spring', 
-                  duration: 0.9, 
-                  bounce: 0.25, 
+                  stiffness: 90, 
+                  damping: 20, 
                   delay: i * 0.08 
                 }}
                 whileHover={{ y: -5 }}

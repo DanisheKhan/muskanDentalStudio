@@ -41,9 +41,9 @@ function DoctorCard({ doctor, index }) {
       viewport={{ once: true, margin: '-40px' }}
       transition={{ 
         type: 'spring', 
-        duration: 1.2, 
-        bounce: 0.35, 
-        delay: index * 0.12 
+        stiffness: 90, 
+        damping: 20, 
+        delay: index * 0.1 
       }}
       whileHover={{ y: -8, scale: 1.01 }}
       id={doctor.id}
@@ -134,6 +134,7 @@ export default function Doctors() {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ type: 'spring', stiffness: 100, damping: 20 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f8fb] text-[#0ea0b8] text-xs font-600 mb-4 border border-[#a1e2ec]/40"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -144,7 +145,7 @@ export default function Doctors() {
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.08 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
             className="text-3xl lg:text-4xl font-800 text-gray-900 mb-4"
           >
             Meet Our Specialists
@@ -152,7 +153,7 @@ export default function Doctors() {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.15 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.2 }}
             className="text-gray-500 max-w-md mx-auto text-sm lg:text-base"
           >
             Experienced, compassionate doctors dedicated to delivering the highest standard of dental care.

@@ -85,8 +85,8 @@ function ServiceCard({ service, index }) {
       viewport={{ once: true, margin: '-20px' }}
       transition={{ 
         type: 'spring', 
-        duration: 0.8, 
-        bounce: 0.3, 
+        stiffness: 100, 
+        damping: 20, 
         delay: index * 0.05 
       }}
       whileHover={{ y: -5, scale: 1.02 }}
@@ -128,7 +128,7 @@ export default function Services() {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f8fb] text-[#0ea0b8] text-xs font-600 mb-4 border border-[#a1e2ec]/40"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -139,7 +139,7 @@ export default function Services() {
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.45, delay: 0.08 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.08 }}
             className="text-3xl lg:text-4xl font-800 text-gray-900 mb-4"
           >
             Everything Your Smile Needs
@@ -147,7 +147,7 @@ export default function Services() {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.15 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.15 }}
             className="text-gray-500 max-w-lg mx-auto text-sm lg:text-base"
           >
             From routine check-ups to complex procedures — our specialists provide comprehensive dental care using advanced technology and gentle techniques.
@@ -166,7 +166,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.5 }}
+          transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
           className="mt-10 rounded-2xl bg-gradient-to-r from-[#0ea0b8] to-[#0c6d85] p-6 lg:p-8 flex flex-col sm:flex-row gap-6 items-center sm:justify-between text-center sm:text-left"
         >
           <div>

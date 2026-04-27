@@ -32,7 +32,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ type: 'spring', stiffness: 100, damping: 20 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f8fb] text-[#0ea0b8] text-xs font-600 mb-6 border border-[#a1e2ec]/40"
             >
               <span className="w-2 h-2 rounded-full bg-[#0ea0b8] animate-pulse" />
@@ -42,7 +42,7 @@ export default function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.1 }}
+              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
               className="text-3xl sm:text-5xl lg:text-[3.4rem] font-800 text-gray-900 leading-[1.15] tracking-tight mb-5"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
@@ -56,7 +56,7 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.2 }}
               className="text-gray-500 text-base lg:text-lg leading-relaxed mb-8 max-w-lg"
             >
               Advanced dental treatments by specialist doctors. From braces to implants — we deliver gentle, precise, and affordable care for your brightest smile.
@@ -65,7 +65,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.3 }}
               className="flex flex-wrap gap-3 mb-10"
             >
               <a
@@ -115,7 +115,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.15 }}
             className="hidden lg:flex flex-col items-center justify-center relative"
           >
             {/* Main tooth graphic */}
@@ -173,7 +173,7 @@ export default function Hero() {
                   key={s.label}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.08 }}
+                  transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.4 + i * 0.08 }}
                   className="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 hover:border-[#a1e2ec] transition-colors duration-200"
                 >
                   <p className="text-2xl font-800 text-[#0ea0b8]">{s.value}</p>

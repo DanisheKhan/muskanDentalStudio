@@ -72,6 +72,7 @@ export default function About() {
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               animate={headInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ type: 'spring', stiffness: 100, damping: 20 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f8fb] text-[#0ea0b8] text-xs font-600 mb-5 border border-[#a1e2ec]/40"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -83,7 +84,7 @@ export default function About() {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 }}
+              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
               className="text-3xl lg:text-4xl font-800 text-gray-900 mb-5 leading-tight"
             >
               Your Trusted Dental
@@ -94,7 +95,7 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.18 }}
+              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.2 }}
               className="space-y-4 text-sm text-gray-500 leading-relaxed mb-7"
             >
               <p>
@@ -108,7 +109,7 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.24 }}
+              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.3 }}
               className="flex flex-wrap gap-3"
             >
               <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -123,7 +124,7 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 }}
+              transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.4 }}
               className="mt-6 flex flex-wrap gap-3"
             >
               <a
@@ -157,9 +158,9 @@ export default function About() {
                   viewport={{ once: true, margin: '-20px' }}
                   transition={{ 
                     type: 'spring', 
-                    duration: 0.8, 
-                    bounce: 0.2, 
-                    delay: i * 0.06 
+                    stiffness: 90, 
+                    damping: 20, 
+                    delay: i * 0.05 
                   }}
                   whileHover={{ y: -5 }}
                   className="group p-5 rounded-2xl bg-[#fafcfe] border border-gray-100 hover:border-[#a1e2ec]/40 hover:bg-white hover:shadow-lg transition-all duration-300"
