@@ -45,11 +45,11 @@ export default function Hero() {
               transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
               className="heading-serif text-4xl sm:text-6xl lg:text-[4rem] font-800 text-gray-900 leading-[1.1] tracking-tight mb-6"
             >
-              Complete Dental
+              Muskan Dental
               <br />
-              <span className="gradient-text">Care Under</span>
+              <span className="gradient-text">Studio Jalgaon</span>
               <br />
-              One Roof
+              Complete Care
             </motion.h1>
 
             <motion.p

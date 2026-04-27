@@ -87,9 +87,9 @@ export default function About() {
               transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
               className="heading-serif text-3xl lg:text-5xl font-800 text-gray-900 mb-5 leading-tight"
             >
-              Your Trusted Dental
+              Muskan Dental
               <br />
-              <span className="gradient-text">Home in Jalgaon</span>
+              <span className="gradient-text">Hospital Jalgaon</span>
             </motion.h2>
 
             <motion.div
