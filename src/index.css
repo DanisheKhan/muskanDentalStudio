@@ -21,8 +21,10 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -34,6 +36,8 @@ body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  width: 100%;
 }
 
 /* Custom scrollbar */

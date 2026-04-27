@@ -137,7 +137,7 @@ export default function Services() {
   const headInView = useInView(headRef, { once: true, margin: '-60px' });
 
   return (
-    <section id="services" className="py-16 lg:py-28 bg-[#fafcfe]">
+    <section id="services" className="py-16 lg:py-28 bg-[#fafcfe] overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div ref={headRef} className="text-center mb-12">

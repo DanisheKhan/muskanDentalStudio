@@ -175,10 +175,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-700 text-gray-900 mb-1">Our Location</h4>
-                  <p className="text-sm text-gray-500 leading-relaxed">
-                    Shop No. 04, Heera Panna Apartment,<br />
-                    Near District Civil Hospital,<br />
-                    Pandey Dairy Chowk, Jalgaon – 425001
+                  <p className="text-sm text-gray-500 leading-relaxed max-w-[240px] sm:max-w-none">
+                    Shop No. 04, Heera Panna Apartment, Near District Civil Hospital, Pandey Dairy Chowk, Jalgaon – 425001
                   </p>
                   <a
                     href="https://maps.google.com/?q=Pandey+Dairy+Chowk+Jalgaon"
