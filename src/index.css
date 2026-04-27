@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+button:focus {
+  outline: none !important;
+}
+
 html, body {
   scroll-behavior: smooth;
   overflow-x: hidden;

@@ -76,14 +76,14 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           id="mobile-menu-btn"
-          className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+          className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors outline-none focus:ring-0"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
           <div className="w-5 h-4 flex flex-col justify-between">
-            <span className={`block h-0.5 bg-gray-700 rounded transition-all duration-300 ${open ? 'rotate-45 translate-y-1.5' : ''}`} />
-            <span className={`block h-0.5 bg-gray-700 rounded transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
-            <span className={`block h-0.5 bg-gray-700 rounded transition-all duration-300 ${open ? '-rotate-45 -translate-y-1.5' : ''}`} />
+            <span className={`block h-0.5 bg-gray-600 rounded transition-all duration-300 ${open ? 'rotate-45 translate-y-1.5' : ''}`} />
+            <span className={`block h-0.5 bg-gray-600 rounded transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+            <span className={`block h-0.5 bg-gray-600 rounded transition-all duration-300 ${open ? '-rotate-45 -translate-y-1.5' : ''}`} />
           </div>
         </button>
       </nav>
