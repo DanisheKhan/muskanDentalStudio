@@ -41,7 +41,7 @@ export default function Navbar() {
           </div>
           <div className="heading-serif">
             <p className="text-sm font-800 text-gray-900 leading-tight tracking-tight">Muskan Dental</p>
-            <p className="font-sans text-[10px] text-[#0ea0b8] font-600 leading-tight tracking-[0.2em] uppercase">Studio</p>
+            <p className="font-sans text-[10px] text-[#0ea0b8] font-600 leading-tight tracking-[0.2em] uppercase">Hospital & Studio</p>
           </div>
         </a>
 

@@ -102,7 +102,10 @@ export default function About() {
               className="space-y-4 text-sm text-gray-500 leading-relaxed mb-7"
             >
               <p>
-                Muskan Dental Studio was founded with a simple mission — to bring world-class dental care to the people of Jalgaon at accessible prices. Our clinic is conveniently located near District Civil Hospital, Pandey Dairy Chowk.
+                Welcome to <span className="font-700 text-gray-900">Muskan Dental Hospital Jalgaon</span>, where we combine advanced dentistry with compassionate patient care. As the premier <span className="text-[#0ea0b8] font-600">dental hospital in Jalgaon</span>, we are dedicated to providing world-class treatments under one roof.
+              </p>
+              <p>
+                Our team at <span className="font-700 text-gray-900">Muskan Dental Studio & Hospital</span> is led by specialist doctors who specialize in everything from painless root canals and high-tech implants to expert orthodontics (braces).
               </p>
               <p>
                 With two specialist doctors — an orthodontic specialist and an endodontic specialist — we cover the full spectrum of dental needs under one roof. We believe that every patient deserves a healthy, confident smile, and we are committed to making that happen with the latest techniques and compassionate care.

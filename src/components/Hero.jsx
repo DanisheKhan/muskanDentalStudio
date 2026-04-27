@@ -47,9 +47,9 @@ export default function Hero() {
             >
               Muskan Dental
               <br />
-              <span className="gradient-text">Studio Jalgaon</span>
+              <span className="gradient-text">Hospital Jalgaon</span>
               <br />
-              Complete Care
+              Expert Care
             </motion.h1>
 
             <motion.p
@@ -58,7 +58,7 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="text-gray-500 text-base lg:text-lg leading-relaxed mb-8 max-w-lg"
             >
-              Advanced dental treatments by specialist doctors. From braces to implants — we deliver gentle, precise, and affordable care for your brightest smile.
+              Experience world-class care at <span className="text-gray-900 font-700">Muskan Dental Hospital Jalgaon</span>. Our specialist doctors provide advanced treatments including braces, implants, and root canals in a modern, gentle environment at the best dental clinic in Jalgaon.
             </motion.p>
 
             <motion.div

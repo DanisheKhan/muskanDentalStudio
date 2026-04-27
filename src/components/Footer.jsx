@@ -15,11 +15,11 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-sm font-700 text-white leading-tight">Muskan Dental</p>
-                <p className="text-[10px] text-[#0ea0b8] font-500 leading-tight tracking-widest uppercase">Studio</p>
+                <p className="text-[10px] text-[#0ea0b8] font-500 leading-tight tracking-widest uppercase text-nowrap">Studio & Hospital</p>
               </div>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed mb-4">
-              Complete dental care under one roof. Advanced treatments by specialist doctors in Jalgaon, Maharashtra.
+              Muskan Dental Hospital Jalgaon provides complete dental care under one roof. Advanced treatments by specialist doctors in Jalgaon, Maharashtra.
             </p>
             <p className="text-xs text-gray-500">muskandentalstudio.in</p>
           </div>
@@ -83,7 +83,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
-          <p>© {year} Muskan Dental Studio. All rights reserved.</p>
+          <p>© {year} Muskan Dental Studio & Hospital. All rights reserved.</p>
           <p>
             Designed for{' '}
             <span className="text-[#0ea0b8] font-600">muskandentalstudio.in</span>
